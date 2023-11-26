@@ -15,7 +15,7 @@
     "url": "https://github.com/Abangpa1ace/ttaengg-libs.git"
   },
   "private": false,
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "browser": "./browser/specific/main.js",
