@@ -33,6 +33,7 @@ jobs:
         run: |
           yarn install --immutable --immutable-cache --check-cache
           yarn build
+          yarn publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
       # - uses: JS-DevTools/npm-publish@v1
