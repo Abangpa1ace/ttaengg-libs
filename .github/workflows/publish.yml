@@ -31,7 +31,7 @@ jobs:
           node-version: 18
       - name: Npm Publish
         run: |
-          yarn install --frozen-lockfile
+          yarn install --immutable --immutable-cache --check-cache
           yarn run build
       - uses: JS-DevTools/npm-publish@v1
         with:
