@@ -12,12 +12,10 @@
 
     /* Bundler mode */
     "allowSyntheticDefaultImports": true,
-    "emitDeclarationOnly": true,
-    "allowImportingTsExtensions": true,
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "react-jsx",
+    "jsx": "react-jsxdev",
     "declaration": true,
     "outDir": "./dist",
 

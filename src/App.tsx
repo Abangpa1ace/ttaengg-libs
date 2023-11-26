@@ -1,5 +1,6 @@
+import { TextInput } from "@/components"
 
-import { TextInput } from '@/components';
+
 
 function App() {
   return (
