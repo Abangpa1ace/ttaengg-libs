@@ -1,0 +1,7 @@
+# npmignore
+/node_modules
+/public
+.env
+package-lock-json
+yarn.lock
+tsconfig.json
