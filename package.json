@@ -1,5 +1,5 @@
 {
-  "name": "@ttaengg/ttaengg-libs",
+  "name": "ttaengg-libs",
   "description": "practice deploying libraries",
   "keywords": [
     "ttaengg"
@@ -15,10 +15,10 @@
     "url": "https://github.com/Abangpa1ace/ttaengg-libs.git"
   },
   "publishConfig": {
-    "@ttaengg/registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/"
   },
   "private": false,
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "browser": "./browser/specific/main.js",
