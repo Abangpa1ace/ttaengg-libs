@@ -14,6 +14,9 @@
     "type": "git",
     "url": "https://github.com/Abangpa1ace/ttaengg-libs.git"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "private": false,
   "version": "1.0.3",
   "main": "dist/index.js",
