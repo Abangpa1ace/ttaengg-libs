@@ -16,6 +16,9 @@
   },
   "private": false,
   "version": "1.0.2",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "browser": "./browser/specific/main.js",
