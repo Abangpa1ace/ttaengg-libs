@@ -20,7 +20,7 @@ jobs:
           always-auth: true
           registry-url: "https://registry.npmjs.org/"
       - name: Install dependencies and build 🔧
-        run: npm install && npm run build
+        run: npm ci && npm run build
       - name: Publish package on NPM 📦
         run: npm publish --access-public
         env:
