@@ -17,11 +17,45 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20.x"
-          registry-url: "https://registry.npmjs.org"
+          registry-url: "https://registry.npmjs.org/"
       - name: Install dependencies and build 🔧
         run: npm ci && npm run build
 
-      - name: Publish package on NPM 📦
-        run: npm publish
+  publish-npm:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20.x"
+          registry-url: "https://registry.npmjs.org/"
+      - run: npm install
+      - run: npm run build
+      - run: cd output/prod && npm publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN:
+            ${{ secrets.NPM_TOKEN }}
+
+            # publish to gpr
+  publish-gpr:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: https://npm.pkg.github.com/
+          scope: "@taozhi8833998"
+      - run: npm install
+      - name: Update package.json name
+        run: sed -i '2,2s/node-sql-parser/@taozhi8833998\/node-sql-parser/g' package.json
+      - run: echo registry=https://npm.pkg.github.com/taozhi8833998 >> .npmrc
+      - run: npm run build
+      - run: cd output/prod && npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
